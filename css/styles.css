@@ -130,15 +130,103 @@ h2 {
 /* Weather Section */
 .weather-section {
     background-color: var(--color-secondary);
+    padding: 4rem 2rem;
+}
+
+.weather-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--color-white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.current-weather {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+.temp-large {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 1rem 0;
+}
+
+.forecast-container {
+    margin-top: 2rem;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.forecast-day {
+    background: var(--color-white);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--color-secondary);
+    transition: transform 0.3s ease;
+}
+
+.forecast-day:hover {
+    transform: translateY(-5px);
+}
+
+.forecast-temp {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin: 0.5rem 0;
+}
+
+.forecast-desc {
+    color: var(--color-navy);
+    margin: 0.5rem 0;
+}
+
+.forecast-humid {
+    font-size: 0.9rem;
+    color: var(--color-navy);
+    opacity: 0.8;
 }
 
 /* Map Section */
 #map-container {
-    height: 400px;
-    border-radius: 10px;
-    overflow: hidden;
     max-width: 1200px;
     margin: 0 auto;
+    background: var(--color-white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#map-container iframe {
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+.map-info {
+    padding: 1.5rem;
+    background: var(--color-white);
+    border-top: 3px solid var(--color-primary);
+}
+
+.map-info h3 {
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+}
+
+.map-info p {
+    color: var(--color-navy);
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
 }
 
 /* Footer */

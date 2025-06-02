@@ -1,10 +1,10 @@
 // ShoreSquad App.js
 
-// Constants
-const API_KEYS = {
-    // You'll need to replace these with actual API keys
-    WEATHER: 'YOUR_WEATHER_API_KEY',
-    MAPS: 'YOUR_MAPS_API_KEY'
+// Constants for API endpoints
+const API_ENDPOINTS = {
+    FORECAST: 'https://api.data.gov.sg/v1/environment/4-day-weather-forecast',
+    TEMPERATURE: 'https://api.data.gov.sg/v1/environment/air-temperature',
+    WIND: 'https://api.data.gov.sg/v1/environment/wind-speed'
 };
 
 // State Management
@@ -95,11 +95,10 @@ async function loadWeather() {
     if (!state.userLocation) return;
     
     // This would typically fetch from a weather API
-    // For now, we'll use mock data
-    const mockWeather = {
-        temperature: 75,
+    // For now, we'll use mock data    const mockWeather = {
+        temperature: 24, // in Celsius
         condition: 'Sunny',
-        windSpeed: 5,
+        windSpeed: 8, // in km/h
         tideLevel: 'Low'
     };
     
@@ -109,14 +108,12 @@ async function loadWeather() {
 
 function renderWeather() {
     const weatherWidget = document.querySelector('.weather-widget');
-    if (!weatherWidget || !state.weather) return;
-
-    weatherWidget.innerHTML = `
+    if (!weatherWidget || !state.weather) return;    weatherWidget.innerHTML = `
         <div class="weather-info">
             <h3>Current Conditions</h3>
-            <p>${state.weather.temperature}°F</p>
+            <p>${state.weather.temperature}°C</p>
             <p>${state.weather.condition}</p>
-            <p>Wind: ${state.weather.windSpeed} mph</p>
+            <p>Wind: ${state.weather.windSpeed} km/h</p>
             <p>Tide: ${state.weather.tideLevel}</p>
         </div>
     `;
